@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <h3 class="text-light">My Address Book</h3>
+  <div class="card mt-5 p-3">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Image</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of contacts; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>
+              <img style="max-width: 40px;" [src]="'http://127.0.0.1:3000/image/' + item.image" alt="">
+            </td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.lastname }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.tel }}</td>
+            <td>{{ item.address }}</td>
+            <td>
+              <button (click)="delete(item._id)" class="btn text-danger">
+                <span class="material-symbols-outlined">
+                  delete
+                </span>
+              </button>
+              <button class="btn text-info" [routerLink]="['/home/update', item._id]">
+                <span class="material-symbols-outlined">
+                  edit
+                </span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

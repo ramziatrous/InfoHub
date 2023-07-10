@@ -1,0 +1,26 @@
+<div class="banner">
+  <h1 class="banner-title">Info Hub</h1>
+  <p class="banner-description">Your Online Address Book</p>
+</div>
+
+<div class="global">
+
+
+  <div class="login-form">
+
+      <h2 class="text"> Login </h2>
+
+      <form class="field" >
+
+          <input [(ngModel)]="user.email" name="email" type="email" placeholder="E-mail" Class="">
+
+          <input [(ngModel)]="user.password"  name="password"type="password" placeholder="Password" Class="mt-3"  >
+
+          <button   class="" (click)="login()">Login</button>
+
+         <span class="link">Not a member? &nbsp;</span><a routerLink="/register" class="">Signup now</a>
+      </form>
+
+  </div>
+
+</div>
